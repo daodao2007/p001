@@ -140,3 +140,23 @@ Listen addresses: [/ip4/127.0.0.1/tcp/2000]
 
 ```
 
+运行结果如下：
+```
+go run .\client\app.go -d /ip4/127.0.0.1/tcp/2000/p2p/QmVeG1AMxy5D5MDMZSyLN4VAKMEFjPVvma3Wj1oVuA4dKy
+sending 5 ping messages to /ip4/127.0.0.1/tcp/2000/p2p/QmVeG1AMxy5D5MDMZSyLN4VAKMEFjPVvma3Wj1oVuA4dKy
+got ping response! RTT: 0s
+got ping response! RTT: 0s
+got ping response! RTT: 1.0011ms
+got ping response! RTT: 0s
+got ping response! RTT: 0s
+```
+
+我这个例子和官方的还是有些不一样，
+官方的例子，其实比较传统，比如他有connect 代码，其实在这个例子中Ping的时候指定了，node id,他是会自动去连接的，不需要显式的去发起connect
+
+代码提交到了github，
+[golang use libp2p](https://github.com/daodao2007/p001) 详细的可以看代码
+
+参考文档：
+[docs.libp2p.io](https://docs.libp2p.io/tutorials/getting-started/go/)
+[官方 golang examples](https://github.com/libp2p/go-libp2p/tree/master/examples)
